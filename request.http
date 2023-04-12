@@ -1,0 +1,67 @@
+//Đăng nhập
+POST  http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username" : "vulequynhgiang",
+    "password" : "123456"
+}
+
+//lấy sinh viên đã đánh giá
+### 
+GET http://localhost:5000/api/template/sent
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmUwZWQ5ZWQyNDNiYjdiY2QyMDI4ZmMiLCJpYXQiOjE2NjAwMzkwMjJ9.-071ZYZd5KfO7etPlp-2i-nMofWZK-ecmwoNWsGWf68
+
+//post bản đánh giá của sinh viên
+###
+POST http://localhost:5000/api/template/post
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmYyMzVlY2MxNDAzZmE1MDNhNjVhNmEiLCJpYXQiOjE2NjAwNDA4MTB9.SsszmvblJV6yDyJEI-6VSFcCHwFJ-7yPQUZtAzXdlhA
+
+{
+    "Ý thức và thái độ trong học tập" : 3
+}
+
+//lấy ra bản đánh giá của sv
+###
+GET http://localhost:5000/api/template/62e0ed9ed243bb7bcd2028fc 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmUyOWUxNWFjZjk5MzUzMDI0ZTI1YjIiLCJpYXQiOjE2NjEzMzQzMDN9.cH2paihR6XNwMwjCs9BTAK9_izX4t7M8HmdyrDMe0gI
+
+//test post
+###
+PUT http://localhost:5000/api/template/62f22fa3a95c0868f0d5e71c/update
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmUwZWQ5ZWQyNDNiYjdiY2QyMDI4ZmMiLCJpYXQiOjE2NjAwMzkwMjJ9.-071ZYZd5KfO7etPlp-2i-nMofWZK-ecmwoNWsGWf68
+
+{
+    "_id":"62f22fa3a95c0868f0d5e71c",
+    "Ý thức và thái độ trong học tập" : 2
+}
+
+//check sv đã đánh giá chưa
+###
+GET http://localhost:5000/api/template/check
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmUwZWQ5ZWQyNDNiYjdiY2QyMDI4ZmMiLCJpYXQiOjE2NjA3Mjg3NDB9.B8OAZdeWxRCvmHMAK3YjYpa3AYoee4hJrb2G0w2NxQI
+
+//lấy ra danh sách sinh viên
+###
+GET  http://localhost:5000/api/user/type=default
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmUwZWQ5ZWQyNDNiYjdiY2QyMDI4ZmMiLCJpYXQiOjE2NjA3Mjg3NDB9.B8OAZdeWxRCvmHMAK3YjYpa3AYoee4hJrb2G0w2NxQI
+
+//lấy ra danh sách sinh viên đã đánh giá
+###
+GET  http://localhost:5000/api/user/type=done
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmUwZWQ5ZWQyNDNiYjdiY2QyMDI4ZmMiLCJpYXQiOjE2NjA3Mjg3NDB9.B8OAZdeWxRCvmHMAK3YjYpa3AYoee4hJrb2G0w2NxQI
+
+//lấy ra danh sách sinh viên chưa đánh giá
+###
+GET  http://localhost:5000/api/user/type=null
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmUwZWQ5ZWQyNDNiYjdiY2QyMDI4ZmMiLCJpYXQiOjE2NjA3Mjg3NDB9.B8OAZdeWxRCvmHMAK3YjYpa3AYoee4hJrb2G0w2NxQI
+
+//lấy sinh viên chưa được giảng viên check
+###
+GET http://localhost:5000/api/template/tcheck=done
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmUwZWQ5ZWQyNDNiYjdiY2QyMDI4ZmMiLCJpYXQiOjE2NjA3Mjg3NDB9.B8OAZdeWxRCvmHMAK3YjYpa3AYoee4hJrb2G0w2NxQI
+
+//test get post student by _id
+###
+GET http://localhost:5000/api/template/get/62e0ed9ed243bb7bcd2028fc
